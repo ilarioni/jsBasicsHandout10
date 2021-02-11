@@ -20,3 +20,17 @@ console.log(person.fullName());
 // In a function, in strict mode, this is undefined.
 // In an event, this refers to the element that received the event.
 // Methods like call(), and apply() can refer this to any object.
+
+// In this example this refers to person2, even if it is a method of person1:
+
+var person1 = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+var person2 = {
+    firstName: "ilia",
+    lastName: "archer"
+};
+console.log(person1.fullName.call(person2));
