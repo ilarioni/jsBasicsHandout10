@@ -34,3 +34,16 @@ var person2 = {
     lastName: "archer"
 };
 console.log(person1.fullName.call(person2));
+
+// JS Arrow Function
+// before
+var hello = function() {
+    return "Hello World";
+};
+console.log(hello());
+
+// after
+var hello1 = () => {
+    return "Hello wonderful World!";
+};
+console.log(hello1());
