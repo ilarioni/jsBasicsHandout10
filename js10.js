@@ -47,3 +47,12 @@ var hello1 = () => {
     return "Hello wonderful World!";
 };
 console.log(hello1());
+
+ // JSON Data
+// it is written as name/value pairs
+
+//  "firstname":"ilia"
+
+// JSON objects
+// {"firstName":"ilia", "lastName":"archer"}
+
