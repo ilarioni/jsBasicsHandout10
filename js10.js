@@ -56,3 +56,9 @@ console.log(hello1());
 // JSON objects
 // {"firstName":"ilia", "lastName":"archer"}
 
+// JSON Arrays
+"employees":[
+    {"firstName":"ilia", "lastName":"archer"},
+    {"firstName":"salome", "lastName":"leshka"},
+    {"firstName":"gio", "lastName":"dara"}
+]
