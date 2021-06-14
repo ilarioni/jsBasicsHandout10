@@ -220,3 +220,7 @@ person.name and person["name"] are same accessing tools of object keys/names
 
 
 */ 
+
+
+// JSON vs XML
+
