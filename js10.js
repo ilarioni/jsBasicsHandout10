@@ -57,11 +57,13 @@ console.log(hello1());
 // {"firstName":"ilia", "lastName":"archer"}
 
 // JSON Arrays
+/*
 "employees":[
     {"firstName":"ilia", "lastName":"archer"},
     {"firstName":"salome", "lastName":"leshka"},
     {"firstName":"gio", "lastName":"dara"}
 ]
+*/ 
 
 // JS Debugging
 
@@ -126,4 +128,95 @@ JavaScript also has a built in function for converting an object into a JSON str
 // JSON makes it possible to store JavaScript objects as text.
 
 
+// JSON Syntax
 
+/*
+The JSON syntax is a subset of the JavaScript syntax.
+
+JSON syntax is derived from JavaScript object notation syntax:
+-Data is in name/value pairs
+-Data is separated by commas
+-Curly braces hold objects
+-Square brackets hold arrays
+
+
+JSON Data - A Name and a Value
+
+JSON data is written as name/value pairs (aka key/value pairs).
+A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value:
+
+- "name":"John"
+
+JSON names require double quotes.
+
+*/ 
+// JSON - Evaluates to JavaScript Objects
+// The JSON format is almost identical to JavaScript objects.
+// In JSON, keys must be strings, written with double quotes:
+
+/* 
+
+{"name":"John"}
+In JavaScript, keys can be strings, numbers, or identifier names:
+{name:"John"}
+
+*/ 
+
+// JSON Values
+
+/*
+In JSON, values must be one of the following data types:
+
+- a string
+- a number
+- an object
+- an array
+- a boolean
+- null
+
+In JavaScript values can be all of the above, plus any other valid JavaScript expression, including:
+
+- a function
+- a date
+- undefined
+
+
+In JSON, string values must be written with double quotes:
+
+{"name":"John"}
+
+In JavaScript, you can write string values with double or single quotes:
+
+{name:'John'}
+
+
+
+JavaScript Objects
+Because JSON syntax is derived from JavaScript object notation, very little extra software is needed to work with JSON within JavaScript.
+
+With JavaScript you can create an object and assign data to it, like this:
+
+person = {name:"John", age:31, city:"New York"};
+
+You can access a JavaScript object like this:
+
+// returns John
+person.name;
+
+It can also be accessed like this:
+// returns John
+person["name"];
+
+
+
+Data can be modified like this:
+person.name = "Gilbert";
+
+It can also be modified like this:
+person["name"] = "Gilbert";
+
+
+person.name and person["name"] are same accessing tools of object keys/names
+
+
+*/ 
