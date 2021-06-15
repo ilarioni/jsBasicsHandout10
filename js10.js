@@ -224,3 +224,33 @@ person.name and person["name"] are same accessing tools of object keys/names
 
 // JSON vs XML
 
+//Both JSON and XML can be used to receive data from a web server.
+// The following JSON and XML examples both define an employees object, with an array of 3 employees:
+
+/*
+JSON Example 
+{"employees":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}
+
+*/ 
+
+
+/*
+XML example
+
+<employees>
+  <employee>
+    <firstName>John</firstName> <lastName>Doe</lastName>
+  </employee>
+  <employee>
+    <firstName>Anna</firstName> <lastName>Smith</lastName>
+  </employee>
+  <employee>
+    <firstName>Peter</firstName> <lastName>Jones</lastName>
+  </employee>
+</employees>
+
+*/
