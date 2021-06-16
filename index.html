@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script></script>
     <title>Document</title>
 </head>
 <body>
@@ -49,6 +50,69 @@
 
     <h1>JSON Data Types</h1>
 
+    <p>In JSON, values must be one of the following data types:</p>
+    <ul>
+        <li>a string</li>
+        <li>a number</li>
+        <li>an object (JSON object)</li>
+        <li>an array</li>
+        <li>a boolean</li>
+        <li>null</li>
+    </ul>
+
+    <p><strong>JSON values cannot be one of the following data types:</strong></p>
+    <ul>
+        <li>a function</li>
+        <li>a date</li>
+        <li>undefined</li>
+    </ul>
+
+    <h3>JSON Strings</h3>
+    <p>Strings in JSON must be written in double quotes.</p>
+    <p>{"name":"John"}</p>>
+
+
+    <h3>JSON Numbers</h3>
+    <p>Numbers in JSON must be an integer or a floating point.</p>
+    <p>{"age":30}</p>
+
+    <h3>JSON Objects</h3>
+    <p>Values in JSON can be objects.</p>
+    <p>{
+        "employee":{
+            "name":"John", 
+            "age":30, 
+            "city":"New York"
+            }
+        }
+    </p>
+    
+    <h3>JSON Arrays</h3>
+    <p>Values in JSON can be arrays.</p>
+    <p>{
+        "employees":
+        [ "John", "Anna", "Peter" ]
+        }
+    </p>
+
+    <h3>JSON Booleans</h3>
+    <p>Values in JSON can be true/false.</p>
+    <p>{ "sale":true }</p>
+    
+
+    <h3>JSON null</h3>
+    <p>Values in JSON can be null.</p>
+    <p>{ "middlename":null }</p>
+
+
+    <h1>JSON.parse()</h1>
+
+
+
+
+
+
+    <script src="js10.js"></script>
 
 </body>
 </html>
