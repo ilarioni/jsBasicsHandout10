@@ -106,7 +106,128 @@
 
 
     <h1>JSON.parse()</h1>
+    <p>A common use of JSON is to exchange data to/from a web server.</p>
+    <p>When receiving data from a web server, the data is always a string.</p>
+    <p>Parse the data with JSON.parse(), and the data becomes a JavaScript object.</p>
 
+
+    <p>Imagine we received this text from a web server:</p>
+    <ul>
+        <li>'{"name":"John", "age":30, "city":"New York"}'</li>
+    </ul>
+
+    <p>Use the JavaScript function JSON.parse() to convert text into a JavaScript object:</p>
+    <ul>
+        <li>const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');</li>
+    </ul>
+
+
+    <p>Use the JavaScript object in your page:</p>
+
+    <h2>Creating an Object from a JSON String</h2>
+
+    <p id="demo"></p>
+
+    <script>
+    const txt = '{"name":"John", "age":30, "city":"New York"}'
+    const obj = JSON.parse(txt);
+    document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+    </script>
+
+    <p> the result will be following: </p>
+    <p>Creating an Object from a JSON String
+        John, 30
+    </p>
+
+    <h3>Array as JSON</h3>
+
+    <p>When using the JSON.parse() on a JSON derived from an array, the method will return a JavaScript array, instead of a JavaScript object.</p>
+
+    <h2>Parsing a JSON Array.</h2>
+    <p>Data written as an JSON array will be parsed into a JavaScript array.</p>
+    <p id="demo"></p>
+
+    <script>
+    const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+    const myArr = JSON.parse(text);
+    document.getElementById("demo").innerHTML = myArr[0];
+    </script>
+
+    <p>we get following result </p>
+    <p>
+        Parsing a JSON Array.
+        Data written as an JSON array will be parsed into a JavaScript array.
+
+        Ford
+    </p>
+
+    <h3>Exceptions</h3>
+
+    <p>Parsing Dates</p>
+    <p>
+        Date objects are not allowed in JSON.
+
+        If you need to include a date, write it as a string.
+
+        You can convert it back into a date object later:
+    </p>
+
+    <h2>Convert a string into a date object.</h2>
+    <p id="demo"></p>
+
+    <script>
+    const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+    const obj = JSON.parse(text);
+    obj.birth = new Date(obj.birth);
+    document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+    </script>
+
+    <p>
+        Or, you can use the second parameter, of the JSON.parse() function, called reviver.
+
+        The reviver parameter is a function that checks each property, before returning the value.
+    </p>
+
+    <h2>Convert a string into a date object.</h2>
+
+    <p id="demo"></p>
+
+    <script>
+    const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+    const obj = JSON.parse(text, function (key, value) {
+    if (key == "birth") {
+        return new Date(value);
+    } else {
+        return value;
+    }
+    });
+    document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+    </script>
+
+    <h3>Parsing Functions</h3>
+    <p>
+        Functions are not allowed in JSON.
+
+        If you need to include a function, write it as a string.
+
+        You can convert it back into a function later:
+    </p>
+
+    <h2>Convert a string into a function.</h2>
+    <p id="demo"></p>
+
+    <script>
+    const text = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+    const obj = JSON.parse(text);
+    obj.age = eval("(" + obj.age + ")");
+    document.getElementById("demo").innerHTML = obj.name + ", " + obj.age(); 
+    </script>
+
+    <p><strong>You should avoid using functions in JSON, the functions will lose their scope, and you would have to use eval() to convert them back into functions.</strong></p>
+
+
+
+    <h1>JSON.stringify()</h1>
 
 
 
