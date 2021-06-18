@@ -228,6 +228,178 @@
 
 
     <h1>JSON.stringify()</h1>
+    <p>
+        A common use of JSON is to exchange data to/from a web server.
+
+        When sending data to a web server, the data has to be a string.
+
+        Convert a JavaScript object into a string with JSON.stringify()
+    </p>
+
+    <h3>Stringify a JavaScript Object</h3>
+    <p>Imagine we have this object in JavaScript:</p>
+
+    <p>const obj = {name: "John", age: 30, city: "New York"};</p>
+    <p>
+        Use the JavaScript function JSON.stringify() to convert it into a string.
+
+        const myJSON = JSON.stringify(obj);
+    </p>
+
+    <p><strong>The result will be a string following the JSON notation.</strong></p>
+
+    <p>myJSON is now a string, and ready to be sent to a server:</p>
+    <ul>
+        <li>const obj = {name: "John", age: 30, city: "New York"};</li>
+        <li>const myJSON = JSON.stringify(obj);</li>
+    </ul>
+
+    <p>
+        <h2>Create a JSON string from a JavaScript object.</h2>
+        <p id="demo"></p>
+
+        <script>
+        const obj = {name: "John", age: 30, city: "New York"};
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+        </script>
+    </p>
+
+    <h3>Stringify a JavaScript Array</h3>
+    <p>
+        It is also possible to stringify JavaScript arrays:
+
+        Imagine we have this array in JavaScript:
+    </p>
+
+    <p>
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        const myJSON = JSON.stringify(arr);
+    </p>
+
+    <p>
+        <h2>Create a JSON string from a JavaScript array.</h2>
+        <p id="demo"></p>
+
+        <script>
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        const myJSON = JSON.stringify(arr);
+        document.getElementById("demo").innerHTML = myJSON;
+        </script>
+    </p>
+
+
+    <h3>Storing Data</h3>
+    <p>
+        When storing data, the data has to be a certain format, and regardless of where you choose to store it, text is always one of the legal formats.
+
+        JSON makes it possible to store JavaScript objects as text.
+    </p>
+
+    <p>
+        <h2>Store and retrieve data from local storage.</h2>
+        <p id="demo"></p>
+
+        <script>
+        // Storing data:
+        const myObj = { name: "John", age: 31, city: "New York" };
+        const myJSON = JSON.stringify(myObj);
+        localStorage.setItem("testJSON", myJSON);
+
+        // Retrieving data:
+        let text = localStorage.getItem("testJSON");
+        let obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = obj.name;
+        </script>
+    </p>
+
+    <p>and we get: </p>
+    <p>
+        Store and retrieve data from local storage.
+        John
+    </p>
+
+    <h3>Exceptions - stringify dates </h3>
+
+    <p>In JSON, date objects are not allowed. The JSON.stringify() function will convert any dates into strings.</p>
+
+    <p>
+        <h2>JSON.stringify() converts date objects into strings.</h2>
+        <p id="demo"></p>
+
+        <script>
+        const obj = {name: "John", today: new Date(), city: "New York"};
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+        </script>
+    </p>
+
+    <p>
+        and we get:
+
+        JSON.stringify() converts date objects into strings.
+        {"name":"John","today":"2021-06-18T10:21:46.265Z","city":"New York"}
+
+    </p>
+
+    <p>You can convert the string back into a date object at the receiver.</p>
+
+    <h3>Stringify Functions</h3>
+
+    <p>
+        In JSON, functions are not allowed as object values.
+
+        The JSON.stringify() function will remove any functions from a JavaScript object, both the key and the value:
+    </p>
+
+
+    <p>
+        <h2>JSON.stringify() will remove any functions from an object.</h2>
+        <p id="demo"></p>
+
+        <script>
+        const obj = {name: "John", age: function () {return 30;}, city: "New York"};
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+        </script>
+    </p>
+
+    <p>
+        JSON.stringify() will remove any functions from an object.
+        {"name":"John","city":"New York"}
+    </p>
+
+    <p>
+        This can be omitted if you convert your functions into strings before running the JSON.stringify() function.
+    </p>
+
+    <p>
+        <h2>JSON.stringify() will remove any functions from an object.</h2>
+        <p>Convert functions into strings to keep them in the JSON object.</p>
+
+        <p id="demo"></p>
+
+        <script>
+        const obj = {name: "John", age: function () {return 30;}, city: "New York"};
+        obj.age = obj.age.toString();
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+        </script>
+    </p>
+
+    <p>
+        and we get:
+        JSON.stringify() will remove any functions from an object.
+        Convert functions into strings to keep them in the JSON object.
+
+        {"name":"John","age":"function () {return 30;}","city":"New York"}
+    </p>
+
+    <p>If you send functions using JSON, the functions will lose their scope, and the receiver would have to use eval() to convert them back into functions.</p>
+
+
+
+    <h1>JSON Object Literals</h1>
 
 
 
