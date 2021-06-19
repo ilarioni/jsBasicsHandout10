@@ -435,8 +435,124 @@
     </p>
 
     <h3>JavaScript Objects</h3>
+    <p>You can create a JavaScript object from a JSON object literal:</p>
 
-    
+    <p>
+        <h2>Creating an Object from a JSON Literal</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myObj = {"name":"John", "age":30, "car":null};
+        document.getElementById("demo").innerHTML = myObj.name;
+        </script>
+    </p>
+
+    <p>
+        Creating an Object from a JSON Literal
+        John
+    </p>
+
+    <p>Normally, you create a JavaScript object by parsing a JSON string:</p>
+    <p>
+        <h2>Creating an Object Parsing JSON</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+        document.getElementById("demo").innerHTML = myObj.name;
+        </script>
+    </p>
+
+    <p>
+        Creating an Object Parsing JSON
+        John
+    </p>
+
+    <h3>Accessing Object Values</h3>
+    <p>You can access object values by using dot (.) notation:</p>
+    <p>
+        <h2>Access a JavaScript Object</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+        document.getElementById("demo").innerHTML = myObj.name;
+        </script>
+    </p>
+
+    <p>
+        Access a JavaScript Object
+        John
+    </p>
+
+    <p>You can also access object values by using bracket ([]) notation:</p>
+
+    <p>
+        <h2>Access a JavaScript Object</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+        document.getElementById("demo").innerHTML = myObj["name"];
+        </script>
+    </p>
+
+    <p>
+        Access a JavaScript Object
+        ohn
+    </p>
+
+    <h3>Looping an Object</h3>
+    <p>You can loop through object properties with a for-in loop:</p>
+    <p>
+        <h2>Looping Object Properties</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+
+        let text = "";
+        for (let x in myObj) {
+        text += x + ", ";
+        }
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    </p>
+
+    <p>
+        Looping Object Properties
+        name, age, car,
+    </p>
+
+    <p>In a for-in loop, use the bracket notation to access the property values:</p>
+    <p>
+        <h2>Looping JavaScript Object Values</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+
+        let text = "";
+        for (let x in myObj) {
+        text += myObj[x] + ", ";
+        }
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    </p>
+
+    <p>
+        Looping JavaScript Object Values
+        John, 30, null,
+    </p>
+
+
+
+    <h1>JSON Array Litterals</h1>
 
 
 
