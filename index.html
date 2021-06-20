@@ -554,7 +554,159 @@
 
     <h1>JSON Array Litterals</h1>
 
+    <p>This is a JSON string:</p>
+    <p>'["Ford", "BMW", "Fiat"]'</p>
 
+    <p>
+        Inside the JSON string there is a JSON array literal:
+
+        ["Ford", "BMW", "Fiat"]
+
+        Arrays in JSON are almost the same as arrays in JavaScript.
+
+        In JSON, array values must be of type string, number, object, array, boolean or null.
+
+        In JavaScript, array values can be all of the above, plus any other valid JavaScript expression, including functions, dates, and undefined.
+
+    </p>
+
+
+    <h3>JavaScript Arrays</h3>
+
+    <p>
+        You can create a JavaScript array from a literal:
+
+        <h2>Creating an Array from a Literal</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myArray = ["Ford", "BMW", "Fiat"];
+        document.getElementById("demo").innerHTML = myArray;
+        </script>
+
+        and the result is :
+
+        Creating an Array from a Literal
+        Ford,BMW,Fiat
+    </p>
+
+    <p>
+        You can create a JavaScript array by parsing a JSON string:
+
+        <h2>Creating an Array from JSON</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '["Ford", "BMW", "Fiat"]';
+        const myArray = JSON.parse(myJSON);
+        document.getElementById("demo").innerHTML = myArray;
+        </script>
+
+        we get:
+        Creating an Array from JSON
+        Ford,BMW,Fiat
+    </p>
+
+    <h3>Accessing Array Values</h3>
+
+    <p>
+        You access array values by index:
+        
+        <h2>Acces an Array by Index</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '["Ford", "BMW", "Fiat"]';
+        const myArray = JSON.parse(myJSON);
+        document.getElementById("demo").innerHTML = myArray[0];
+        </script>
+
+        and the result you get:
+        Acces an Array by Index
+        Ford
+    </p>
+
+    <h3>Arrays in Objects</h3>
+
+    <p>
+        Objects can contain arrays:
+
+        {
+            "name":"John",
+            "age":30,
+            "cars":["Ford", "BMW", "Fiat"]
+        }
+    
+    </p>
+
+    <p>
+        You access array values by index:
+
+        <h2>Access Array Values</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}';
+        const myObj = JSON.parse(myJSON);
+
+        document.getElementById("demo").innerHTML = myObj.cars[0];
+        </script>
+
+        result you get:
+        Access Array Values
+        Ford    
+
+    </p>
+
+    <h3>Looping Through an Array</h3>
+
+    <p>
+        You can access array values by using a for in loop:
+
+        <h2>Looping an Array</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}';
+        const myObj = JSON.parse(myJSON);
+
+        let text = "";
+        for (let i in myObj.cars) {
+        text += myObj.cars[i] + ", ";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+        </script>
+
+        result we get:
+        Looping an Array
+        Ford, BMW, Fiat,
+    </p>
+
+    <p>
+
+        Or you can use a for loop:
+
+        <h2>Looping an Array</h2>
+        <p id="demo"></p>
+
+        <script>
+        const myJSON = '{"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}';
+        const myObj = JSON.parse(myJSON);
+
+        let text = "";
+        for (let i = 0; i < myObj.cars.length; i++) {
+        text += myObj.cars[i] + ", ";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    </p>
+
+
+
+    <h1>JSON Server</h1>
+    
 
 
 
